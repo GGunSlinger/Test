@@ -40,7 +40,7 @@ const LoginPage = () => {
                 <TextField
                   required
                   id="outlined-required"
-                  label="Required"
+                  label="Login"
                   value={accountName}
                   onInput={e => setAccountName(e.target.value)}
                   defaultValue="Admin"
