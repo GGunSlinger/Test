@@ -40,10 +40,9 @@ const LoginPage = () => {
                 <TextField
                   required
                   id="outlined-required"
-                  label="Login"
+                  label="Required"
                   value={accountName}
                   onInput={e => setAccountName(e.target.value)}
-                  defaultValue="Admin"
                   variant="outlined"
                 />
               </div>
@@ -53,11 +52,9 @@ const LoginPage = () => {
                   id="outlined-password-input"
                   label="Password"
                   type="password"
-                  value={password}
                   onInput={e => setPassword(e.target.value)}
                   autoComplete="current-password"
                   variant="outlined"
-                  defaultValue="123"
                 />
               </Box>
               <Box display="flex" justifyContent="center" mt="15px">

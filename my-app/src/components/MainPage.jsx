@@ -76,8 +76,6 @@ const MainPage = () => {
     }
   }, [res.fetching])
 
-  let history = useHistory()
-
   if (res.fetching) return <Box className={classes.loader}><CircularProgress /></Box>;
   if (res.error) return <p>Errored!</p>;
   if (localStorage.getItem('token') === null) return <Redirect to='/login' />
@@ -86,21 +84,31 @@ const MainPage = () => {
     <>
       <Box display='flex' justifyContent='center' flexDirection='column' alignItems='center'>
         {state && state.map(e => (
-          <Box className={classes.container} onClick={() => history.push(`/post/${e.id}`)}>
-            <Box className={classes.item_img}>
-              <Box>
-                <img className={classes.img} src={e.img} alt='' />
-              </Box>
-              <p className={classes.header_text}>{e.name}</p>
-            </Box>
-            <Box mt="-5px" display="flex" alignItems="center">
-              <p className={classes.item_text}>{e.post_text}</p>
-            </Box>
-          </Box>
+          <ListItem key={e.id} img={e.img} name={e.name} post_text={e.post_text} id={e.id}/>
         ))}
       </Box>
     </>
   );
 };
+
+const ListItem = ({ img, name, post_text, id }) => {
+
+  const classes = useStyles()
+  let history = useHistory()
+  
+  return (
+    <Box className={classes.container} onClick={() => history.push(`/post/${id}`)}>
+      <Box className={classes.item_img}>
+        <Box>
+          <img className={classes.img} src={img} alt='' />
+        </Box>
+        <p className={classes.header_text}>{name}</p>
+      </Box>
+      <Box mt="-5px" display="flex" alignItems="center">
+        <p className={classes.item_text}>{post_text}</p>
+      </Box>
+    </Box>
+  )
+}
 
 export default MainPage
