@@ -1,10 +1,8 @@
 # Test
 
-npm -i или yarn -i для установки для my-app и server
+npm -i или yarn -i для установки зависимостей
 
-запуск сервера yarn run server или npm run server.
-
-запуск проекта yarn start или npm start.
+запуск проекта yarn run dev или npm run dev.
 
 Login: Admin
 
