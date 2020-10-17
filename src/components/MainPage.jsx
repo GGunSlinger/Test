@@ -73,7 +73,7 @@ const MainPage = () => {
   useEffect(() => {
     if (!res.fetching) {
       setState(res.data.posts)
-    }
+    } // eslint-disable-next-line
   }, [res.fetching])
 
   if (res.fetching) return <Box className={classes.loader}><CircularProgress /></Box>;
