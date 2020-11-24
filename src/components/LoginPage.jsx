@@ -16,7 +16,7 @@ const LoginPage = () => {
 
   const auth = (event) => {
     event.preventDefault();
-    executeQuery({ email: accountName, password: password }).then(res => {
+    executeQuery({ email: accountName.toLowerCase().trim(), password: password.toLowerCase().trim() }).then(res => {
       if (res.data.login) {
         localStorage.setItem('token', res.data.login)
         setToken(true)

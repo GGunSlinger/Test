@@ -3,14 +3,14 @@ module.exports = {
     {
       id: "12345",
       name: "Alice",
-      email: "Admin",
+      email: "admin",
       password: "123",
       roles: ["admin"],
       permissions: ["read:any_account", "read:own_account"]
     },
     {
       id: "67890",
-      name: "Bob",
+      name: "bob",
       email: "bob@email.com",
       password: "pAsSWoRd!",
       roles: ["subscriber"],

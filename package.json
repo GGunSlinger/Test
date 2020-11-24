@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "concurrently -k npm:server:*",
+    "server": "npm:server:*",
     "dev": "concurrently -k 'npm:server:*' 'npm:start'",
     "build": "react-scripts build",
     "test": "react-scripts test",
